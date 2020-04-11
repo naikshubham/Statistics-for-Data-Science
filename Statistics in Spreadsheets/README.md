@@ -126,3 +126,84 @@ Quartile 1: The smallest values 25% of the data.
 - Positive correlation indicate that as one variable increases, the other also increases.
 - Negative correlation values signify that as one variable increases, the other decreases.
 
+### Central Limit Theorem in action
+- increasing the sample size changes both the statistics as well as the histogram
+- **CLT** : If a sample size from an independent, random variable is large enough, then the sampling distribution will be normal or nearly normal.
+
+#### "Large enough" is vague. The sample size is impacted by:
+- How accurate we need to be. Since a sample is a representation, the resulting stats will be approximate. If we need a high degree of certainty, we will need more samples to more closely resemble the population.
+- The more closely the population follows a normal distribution, the fewer sample points will be required.
+
+### Hypothesis Testing
+- **Hypothesis** : Is any testable claim
+- Stating that the price of a Ferrari is high, isnt testable.This is because high isnt defined. To make it testable we can define the hypothesis such as `average Ferrari price is higher than the average sports car price.`
+- There are two types of hypothesis the **NULL** and **alternate**.
+- **Null hypothesis** : represents the status quo or the accepted fact. The NULL is short for NULLIFY. This is because our statistical test seeks to NULLify or reject, the statement. 
+- **Alternate/Research Hypothesis** : is the challenger statement meaning everything else not represented in the NULL hypothesis.
+- Generally an **H0** denote the NULL while **H1** represent the alternate.
+- In our example the **NULL** is that the **`average Ferrari price is equal to the average sports car price`** . The **Alternate/Challenger** hypothesis is that the **`average ferrari price is greater or less than the average sports car price.`**
+- The status quo is that there is no difference but we want to test if there is a difference.
+
+#### Common sense testing
+- **NULL Hypothesis (H0):**  `Average Ferrari Price equals Average Sports car Price`
+
+- **Alternate Hypothesis (H1):** `Average Ferrari price does not equal Average sports car price`
+
+- Average Ferrari Price(Sample size = 50) = $252,000
+- Average non-Ferrari Sports Car Price(Sample Size = 50) = $85,000
+
+
+- There is a large difference in the average prices, so we dont agree with the status quo. In stats quo, we REJECT the NULL hypothesis.
+
+#### Another common sense test
+- **NULL Hypothesis (H0) :** `Average toyota price equals average honda price`
+- **Alternate Hypothesis (H1):** `Average toyota price does not equal average honda price`
+
+- Average Toyota Price (sample size = 50) = $23,845
+- Average Honda Price (sample size=50) = $23,720
+
+- The values are so close, so the difference may only be from sampling. So we accept the NULL Hypothesis. In stats we say `Fail to reject the NULL Hypothesis`.
+
+#### Removing subjectivity in a test
+- To further avoid subjectivity, hypothesis testing uses a **test statistics** to measure the H0 validity.
+- The car price experiment tests the independence of two samples. So we use a **t-test** as the statistic. Example : t-test (In spreadsheets : T.TEST(range1, range2, tails, type))
+- The t-Test produces a p-value. **p-value** is the probability that the results are due to chance/error.
+- We have to predetermine a p-value cutoff for our test. Choose a p-value cutoff (Example: 1%/0.01, or 5%/0.05). This means we want to have a probabilty of say 1% or 5% that the results are an error.
+- We use a p-value of 5% in most cases.
+- If the p-value(probability) is less than the cutoff, 5% then we will **REJECT the NULL Hypothesis** and conclude that there is a difference between the samples.
+- **If the p-value from our test statistic is less than 0.05 then we reject the NULL hypothesis**
+
+- **Spreadsheet Formula** : **`=T.TEST(range1, range2, tails, type)`** - It accepts range1, range2, the number of tails being tested & type of test.
+- If we are testing whether the `difference is only greater than or only less than the t-test has 1 tail.`
+- In our case, the H0 operator is equals. So values can be above or below the mean. Thus the test has `two tails` in either direction from mean. 
+- Next if we measure the `same observations at different times, the type equals 1.` If we measure `different observations with the same variance the type is 2` and i`f we measure different observations with different varainces, then use type 3`
+
+### Comparing samples with a t-test
+- How can we be sure if a sample is the same or different compared to a population or other sample? **Sample independence can be tested with a T.TEST()!**
+- examining data from a farm. Prior to introducing a new fertilizer, 10 plant heights were measured. After the new fertilizer was used another 10 plants were measured. We will perform a t-test to understand if the plant heights in the samples are in fact different. `This is a two-tailed test because the heights are either above or below the original sample, "tails" to either side of the original distribution.The type is 2 because the samples are not from the same subjects but they have the same variance.` Had they been the same plants before and after fertilizer treatment, it would be a "paired" t-test which is type 1. 
+- `NULL Hypothesis` : `Prior plants height equals next plants height`.
+- `Alternate Hypothesis` : `Prior plants height does not equal next plant height`.
+- Refer excel [a link](excels/t-test.xlsx)
+
+### Paired t-test
+- Now we are looking at driver data. Most research suggests drivers perform better in the morning versus in the afternoon. The researcher here measured 10 drivers in the morning and again the same drivers in the evening. The milliseconds response time is the time needed to apply the brakes after seeing a prompt in the simulator. We need to perform a t-test to see if this data supports the research that drivers do indeed perform better in the morning.
+- `NULL Hypothesis (H0)` : Morning driver response times  <  Afternoon driver response times
+- `Alternate Hypothesis (H1)` : Morning driver response times  >=  Afternoon driver response times
+- `Tails` : This should have `one tails` as we are testing whether difference is greater than or equal only.
+- `Type` : `Type equals 1` as same drivers are measured at different times.
+- Refer excel [a link](excels/t-test_2.xlsx)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
