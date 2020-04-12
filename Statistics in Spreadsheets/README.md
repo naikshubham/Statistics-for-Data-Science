@@ -183,7 +183,7 @@ Quartile 1: The smallest values 25% of the data.
 - examining data from a farm. Prior to introducing a new fertilizer, 10 plant heights were measured. After the new fertilizer was used another 10 plants were measured. We will perform a t-test to understand if the plant heights in the samples are in fact different. `This is a two-tailed test because the heights are either above or below the original sample, "tails" to either side of the original distribution.The type is 2 because the samples are not from the same subjects but they have the same variance.` Had they been the same plants before and after fertilizer treatment, it would be a "paired" t-test which is type 1. 
 - `NULL Hypothesis` : `Prior plants height equals next plants height`.
 - `Alternate Hypothesis` : `Prior plants height does not equal next plant height`.
-- Refer excel [a link](excels/t-test.xlsx)
+- Refer excel [t-test](excels/t-test.xlsx)
 
 ### Paired t-test
 - Now we are looking at driver data. Most research suggests drivers perform better in the morning versus in the afternoon. The researcher here measured 10 drivers in the morning and again the same drivers in the evening. The milliseconds response time is the time needed to apply the brakes after seeing a prompt in the simulator. We need to perform a t-test to see if this data supports the research that drivers do indeed perform better in the morning.
@@ -191,8 +191,44 @@ Quartile 1: The smallest values 25% of the data.
 - `Alternate Hypothesis (H1)` : Morning driver response times  >=  Afternoon driver response times
 - `Tails` : This should have `one tails` as we are testing whether difference is greater than or equal only.
 - `Type` : `Type equals 1` as same drivers are measured at different times.
-- Refer excel [a link](excels/t-test_2.xlsx)
+- Refer excel [t-test_2](excels/t-test_2.xlsx)
 
+### Hypothesis testing with the Z-test
+- The t-test infers whether there is a difference between two mean averages. Similarly a Z-test will give us a probability that two dataset averages are different. 
+
+#### Comparing the T-tests and Z-tests
+##### Similarities
+- Determine  whether two population means are statistically different
+- Select a p-value cutoff prior to the test (Usually 0.05)
+- If the resulting p-value is less than 0.05, then REJECT H0 else FAIL TO REJECT H0.
+
+#### Contrasting T-tests and Z-tests
+##### Even though both t-tests and Z-tests work with sample averages there are some differences
+- Z-Test Formula **`Z.TEST(rnge1, testStatisctic, Stdev)`**
+- T-Test Formula **`T.TEST(range1, range2, tails, type)`**
+- A T-test needs 2 ranges in the formula incontrast Z-test needs only one.
+- Instead of worrying about tails and types like in a t-test, a z-test accepts a known summary statistic from the population.
+- Z-test needs a test statistic(i.e population mean). T-test works when variance is unknown.
+- Z-test is used with bigger datasets (n > 30) whereas T-test is used with smaller datasets (n < 30).
+- Just like how the z score measured how many standard deviations a value was from the mean. A Z-test is similar and measures a distance. 
+
+#### Z-tests calculates the probability
+- Instead of z-score we will be calculating a z-test statistic. The result of a z-test is a probability not a distance like z-score.
+
+#### Z-Tests in Spreadsheets
+- **`Z.TEST(data, value, [standard_deviation])`**
+- Data array, next add the value called "test statistics", std deviation. Reject the NULL hypothesis if the p-value is less than 0.05.
+
+### Performing a Z-test
+- When we have over 30 observations, we should use a Z.TEST() over a T.TEST() to compare means. Excel [z-test_2](excels/Z-test.xlsx) has some salary data of U.S Government workers. Our job is to conduct a hypothesis test using the Z-test. 
+- Here we want to know if the sample average salary is less than or equal to the government's published average. Are we going to compare one or two tails of the distribution? The <= operator is exploring a single direction away from the value. Thus, this is a one-tailed test.
+- A Z-test accepts the data range followed by the population's mean - in this case, the government's published average salary. We can also add the population's standard deviation as a third parameter. If we don't, Z.TEST() will use the sample's standard deviation.
+
+### What changes in a two-tailed test?
+-  Now we want to determine if the sample worker salary is equal to the population's. The NULL hypothesis operator changes to = .
+This means we are testing whether the sample average is statistically above or below the average. As a result, the experiement is testing in 2 directions from the mean, so it's a two-tailed test.
+- If we have a two-tailed test we must multiple the Z.TEST() results by 2. 
+- Refer excel [z-test-2-tailed](excels/Z-test-2-tailed.xlsx)
 
 
 
