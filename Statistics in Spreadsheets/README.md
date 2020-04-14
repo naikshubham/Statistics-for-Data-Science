@@ -230,7 +230,43 @@ This means we are testing whether the sample average is statistically above or b
 - If we have a two-tailed test we must multiple the Z.TEST() results by 2. 
 - Refer excel [z-test-2-tailed](excels/Z-test-2-tailed.xlsx)
 
+### Hypothesis testing with Chi-squared test
 
+#### Applications of the chi-squared test
+- When we are doing research we often have a set of prior observations and after some treatment like applying a new drug we need to know if the treatment actually made a difference. This is determined with the chi-squared test.
+- Comparing samples for meaningful differences.
+
+#### Testing before and after 
+When we have prior observations and new sample we are left with two choices. Two possibilities :
+- The difference in the new group stems from random sampling (H0)
+- There is in fact a meaningful difference (H1)
+- These two choices are used for the NULL and alternate hypothesis. Further the chi-square test will provide a probability that the two groups are independent or truly different.
+
+#### Chi-sqaured test conditions
+- For a chi-squared test to be useful data has to be in groups such as (e.g "old treatement", "new treatment") or values based on gender or other dividing data characteristic.
+- Avoids really small expected values (<5). The general consensus is that the expected numbers we are measuring should be greater than 5. Otherwise we may need to perform different tests.
+
+#### Testing the independence of two groups
+- Often we see in advs "Clinically proven" or "Lab tested". Inorder to make claims about how the drug improves outcomes ethically and legally the owners need to create an experiment controlling for lifestyle factors and ultimately comparing weight within two groups one treated with the supplement and the other not.
+- **Its in the lab or clinic that a chi-squared test is often performed to test the independence of the two groups.**
+
+#### Chi-squared test in Spreadsheets
+`CHITEST(observed_range, expected_range)`
+- FAIL TO REJECT H0 if the p-value is greater than 0.05
+- REJECT H0 if the p-value is less than 0.5
+
+#### Performing a chi-squared test
+- In science and other disciplines, it's important to know if the variation we observe in our data is due to chance or is actually stemming from another source.One way to understand this is with a chi-squared test.
+- CHITEST() function accepts two ranges. The first represents the observations, and the second represents the expected values.In this case, both ranges must have the same COUNT() or the formula will fail. The formula returns the p-value we will use to determine whether or not to reject the null hypothesis.
+- In this example we are reviewing a call center agent's call times. The agent has a higher average call time than the expected call time for all other agents. Let's see if this agent's specific call times are due to chance, i.e. random call variation, or because the agent needs more training to speed up. 
+
+
+
+- To perform chi squared test in sheets, use the CHITEST function.
+
+
+
+- 
 
 
 
