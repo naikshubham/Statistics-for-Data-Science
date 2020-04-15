@@ -259,23 +259,17 @@ When we have prior observations and new sample we are left with two choices. Two
 - In science and other disciplines, it's important to know if the variation we observe in our data is due to chance or is actually stemming from another source.One way to understand this is with a chi-squared test.
 - CHITEST() function accepts two ranges. The first represents the observations, and the second represents the expected values.In this case, both ranges must have the same COUNT() or the formula will fail. The formula returns the p-value we will use to determine whether or not to reject the null hypothesis.
 - In this example we are reviewing a call center agent's call times. The agent has a higher average call time than the expected call time for all other agents. Let's see if this agent's specific call times are due to chance, i.e. random call variation, or because the agent needs more training to speed up. 
+- To perform chi squared test in sheets, use the CHITEST function. Refer excel [chitest](excels/chitest.xlsx)
 
-
-
-- To perform chi squared test in sheets, use the CHITEST function.
-
-
-
-- 
-
-
-
-
-
-
-
-
-
-
+#### Are bank loans getting worse?
+- The previous CHITEST() experiment had equal expected probabilities. However, it is often the case that there are multiple states of an experiment, referred to as degrees of freedom.Furthermore, not all experiment outcomes are equal - some may be more or less likely.A senior vice president at a bank believes the loans of the bank are getting worse. A loan can have these states:
+    Current: in good standing
+    Grace Period: the loan hasn't made a payment but is late by less than 30 days
+    Late 30-60: the loan is past due 30-60 days
+    Late 60-90: the loan is past due 60+ days
+    Collections: the loan was sent to collections to recieve any payment
+    Charged Off: the loan has no value
+- test this hypothesis against the bank's expected distribution for these states. For example, the bank expects 80% of loans to be current each month. A chi-squared test comparing the observed loan frequencies with expected will help us determine if the VP's estimation is correct.
+- Refer [loan_chitest](excels/loan_chitest.xlsx)  Even though each class has different probabilities, chi-squared adjusts so we can trust the p-value!
 
 
