@@ -272,4 +272,36 @@ When we have prior observations and new sample we are left with two choices. Two
 - test this hypothesis against the bank's expected distribution for these states. For example, the bank expects 80% of loans to be current each month. A chi-squared test comparing the observed loan frequencies with expected will help us determine if the VP's estimation is correct.
 - Refer [loan_chitest](excels/loan_chitest.xlsx)  Even though each class has different probabilities, chi-squared adjusts so we can trust the p-value!
 
+### Dating Data!
+
+#### Maximum and Minimum Age 
+- MAX(...)  MIN(.....)
+
+#### Social behavior
+- We may also suspect that how often someone drinks alcohol or observes religious ceremonies may indicate social behavior.As a result, describing these varaibles with additional summary statistics could prove to be relevant when learning about the site's profiles.
+- Using spreadsheet formulas we will identify the percent of non-alcohol drinkers from a sample of profiles. Then we'll calculate the quartiles for annual church visits.Lastly, we will explore the relationship between AGE and annual church visits using correlation
+- `COUNTIF(A1:A10, <3)` , `QUARTILE(A1:B10, 4)` , `CORREL(A1:A10, B1:B10)`
+- To get the percent of non-drinkers, we first need to use COUNTIF. COUNTIF Accepts the data to review and only tallies cells when a condition is true.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
