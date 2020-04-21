@@ -283,7 +283,16 @@ When we have prior observations and new sample we are left with two choices. Two
 - `COUNTIF(A1:A10, <3)` , `QUARTILE(A1:B10, 4)` , `CORREL(A1:A10, B1:B10)`
 - To get the percent of non-drinkers, we first need to use COUNTIF. COUNTIF Accepts the data to review and only tallies cells when a condition is true.
 
+### Understanding the distribution of ages
+- As an analyst at a social networking site trying to match like minded singles, we decide to first explore profile ages. This is a basic profile attribute but this alone is often an important factor in relationships.While we might expect that most people searching for love will tend to be younger, we should verify this by using statistics to better understand the distribution of ages. Refer [distribution](excels/Distribution_of_age.xlsx)
 
+#### What's the drinking age?
+- Now we want to add more data to your descriptive stats. In profiles, users report how often they drink alcohol in a week so we add it to our sample. Drinking behaviour can be important in relationships so obtaning additional summary statistics could help us learn more about profiles.Here, we'll count the number of non-drinkers. use COUNTIF() to calculate the number of non-drinkers - that is, rows where "Drinks per week" is 0. 
+- Conclusion : 8.4% non drinkers, but mostly moderate drinks per week. Refer [drinking age](excels/drinking_age.xlsx)
+
+#### Profile login behavior
+- We suspect that people login about once a day. However, after they are in a relationship the hours since last login will likely grow dramatically. After all, people in a relationship have no incentive to continue to look for love! Let’s check.This data measures how many hours have passed since the user last logged in. The mode, 2nd quartile, and mean have already been calculated. Notice that the mean is vastly different. So, we need to calculate the variance, standard deviation, and maximum to understand the spread of the data. We also want to analyze the z-score of the maximum value. Remember, a z-score is the number of standard deviations from the mean and is calculated by subtracting the mean from the data point (in this case, the maximum), and dividing by the standard deviation.
+- Connclusion : We confirmed our prior beliefs: some outliers skew the mean! Refer [profile_login_behaviour](excels/profile_login_behaviour.xlsx)
 
 
 
