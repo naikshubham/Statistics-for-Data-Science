@@ -294,6 +294,26 @@ When we have prior observations and new sample we are left with two choices. Two
 - We suspect that people login about once a day. However, after they are in a relationship the hours since last login will likely grow dramatically. After all, people in a relationship have no incentive to continue to look for love! Let’s check.This data measures how many hours have passed since the user last logged in. The mode, 2nd quartile, and mean have already been calculated. Notice that the mean is vastly different. So, we need to calculate the variance, standard deviation, and maximum to understand the spread of the data. We also want to analyze the z-score of the maximum value. Remember, a z-score is the number of standard deviations from the mean and is calculated by subtracting the mean from the data point (in this case, the maximum), and dividing by the standard deviation.
 - Connclusion : We confirmed our prior beliefs: some outliers skew the mean! Refer [profile_login_behaviour](excels/profile_login_behaviour.xlsx)
 
+#### Visuals & Distributions
+##### Distribution stats
+- Variance : how far the data is spread
+- Standard Deviation : unit of dispersion relative to mean, square root of variance
+- z-score : the number of std deviations a point is from mean
+
+##### Visualizing Distributions
+- It can be hard to imagine the shape of a distribution from the statistics alone. The histogram is a helpful way to see the variable distribution. Histogram buckets data points into groups. Low values are grouped together, then middle values and so on.As a result, histograms can be misleading because the visual changes based on the number of bins or buckets used. As a practitioner we need to ensure that our histogram represents the distribution fairly.
+- Other consideration for histogram is to ensure that we have enough data points to make the visuals informative & whether or not we are working with a sample or entire population.
+
+##### Comparing Distributions
+- We will also be visually exploring the important matching feature AGE. Constructing an AGE histogram will illustrate a different type of data distribution compared to hours since last login.As a major matching factor, the company may want to ensure the distribution is "normal".
+- A non normal distribution for an important customer characteristics may indicate the site over-indexes with young, middle-aged or old people. For some type of businesses, an over emphasis illustrated in a non-normal distribution could become a risk factor.For example, a mutual fund heavily indexed to large market cap stocks may expose the fund to additional risk where diversification could help.
+- In our case, if age was non-normal, we would identify new age groups for marketing. Even though in many cases we can visually inspect a normal versus non-normal distributions, we can still need to calculate the skew & kurtosis for AGE.
+- To review, the **skew is a measure of a non-symmetrical "tail" to the right or left of the mean**. **The Kurtosis measures how the distribution trails off on either side of a peak in the histogram.**
+- `A general practise to test for normalcy is to measure the skew & kurtosis values`. **When both values are between -2 & 2 we can state the distribution is normally distributed.**
+
+
+
+
 
 
 
