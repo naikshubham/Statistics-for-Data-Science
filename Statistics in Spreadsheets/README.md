@@ -352,10 +352,11 @@ For hours since last login, recall that the mode and 2nd quartile were similar, 
 ##### Multiple relationships!
 - Using the LINEST() function, we explored how one variable related to another. This is a univariate linear regression with a y-intercept and one coefficient. The single coefficient along with the y-intercept demonstrates how the dependent-y variable changes with one unit measure change in the single independent-x variable. Since we are concerned with many dimensions of a profile and the users' overall site activity, we need **multiple linear regression**, in which there are many X variable coefficients impacting Y. This equation calculates the estimated outcome of our **multiple linear regression**, where we're interested in how the hours since last login is affected by age, income, and hours volunteered.
 - `Hours since last login = (age_coeff * age) + (income_coeff * income) + (volunteer_coeff * volunteerHrs) + y-intercept`
+- Refer [multiple_regression](excels/multiple_regression.xlsx)
 
 
-
-
+## Reference
+- Datacamp : Introduction to Statistics in Spreadsheets
 
 
 
