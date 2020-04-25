@@ -311,6 +311,60 @@ When we have prior observations and new sample we are left with two choices. Two
 - To review, the **skew is a measure of a non-symmetrical "tail" to the right or left of the mean**. **The Kurtosis measures how the distribution trails off on either side of a peak in the histogram.**
 - `A general practise to test for normalcy is to measure the skew & kurtosis values`. **When both values are between -2 & 2 we can state the distribution is normally distributed.**
 
+##### Visualizing logins
+- Earlier we calculated descriptive statistics for the profile logins. Now we will plot them to confirm the sample's distribution.
+The mode and 2nd quartile are similar yet the other descriptive statistics are much larger. Considering 50% of the data is less than 45 hours since the last login, we think this data must be "non-normal" or skewed in some way. Skewed distributions mean the values are not evenly spread out on either side of the mean.
+This data must have some outliers skewing the mean away from the modal average and second quartile. Let's verify this using a histogram. Remember, a histogram is a series of rectangles whose size is proportional to the frequency of records in the bin or interval. It’s not the same as a bar chart!   
+- Conclusion : the visual confirmed the positive skew described in your stats! Refer [viz_logins](excels/viz_logins.xlsx)
+
+##### How old do users look?
+- Let's check the age variable to compare the age distribution with the previous histogram.
+For hours since last login, recall that the mode and 2nd quartile were similar, yet the other descriptive statistics were much larger. In contrast, the age variable's descriptive stats are closer together. How this will change the way a histogram of age will look? .We know the age data should look more "normal". A normal distribution will have a symmetric and "bell-shaped" silouette. There shouldn't be outliers or a skew.
+- COnclusion : Age is less skewed and more "normal". Marketing isn't targeting one age demographic disproportionately.Refer [viz_age](excels/viz_age.xlsx)
+
+### Tipping the scale to positive correlation
+- Here we will learn how a scatter plot represents a correlation value
+
+#### Correlation tips from one to negative one
+- Correlation is a measure between two variables. Its value ranges from -1 to 1. 
+- `Correlation = -1` : When the value is **negative** that means the variables have an **opposite relationship**. As one variable increases the other will decrease.
+- `Correlation = 1` : Positive correlation means as one variable increases so does the other.
+- `Correlation = 0` : Means a weak or no relationship
+- Note that just because one value increases doesnt mean that it **causes** the other values to increase or decrease.
+- Correlation can be visualized on scatter plot.
+
+##### Investigating age and volunteering
+- Earlier we observed a strong correlation between age & annual religious observation. Another interesting field which could indicate a profile's moral values is the number of volunteer hours annually. In each profile a user can add information regarding their annual estimated hours spent volunteering.In addition to correlation we decide to plot a scatter plot. If there is a correlation between age & volunteer_hrs, we should be able to observe a trend sloping upward or downward. If the correlation is low, we could sumarize that people volunteer at similar rates regardless of their age.
+- COnclusion : We didn't see any correlation relationship. Let's try another variable! Refer [correl_age_volunteering](excels/correl_age_volunteering.xlsx)
+
+### More complex statistical relationships
+- Multiple Regression in sheets : `LINEST(y-variables, x-variables)`
+
+##### Are gender and number of roommates independent?
+- As it turns out, the dating website also has information on gender and the number of roommates each profile has, so let's "pivot" for a moment and explore whether the two are independent using a chi-squared independence test.Although we believe age and roommates could be related, we suspect that gender has no impact on the number of roommates.On the right is a frequency pivot table from 200 profiles. 
+- H0: The `roommates` & `gender` variables are independent
+- H1: The `roommates` & `gender`  variables are not independent
+- Accept H0. Refer [chi_test](excels/chi_test.xlsx)
+
+##### Getting old and rich
+- Going a level deeper, we now want to calculate the exact relationship between age and income. Explicitly calculating the incremental relation between these important matching variables will help the marketers in our company complete user person and gain a specific picture of many of the profile attributes. In review, the CORREL() function accepts an X column and a Y column for comparison. In our analysis, x = age and y = income. Refer [correl](excels/correl.xlsx)
+
+##### Multiple relationships!
+- Using the LINEST() function, we explored how one variable related to another. This is a univariate linear regression with a y-intercept and one coefficient. The single coefficient along with the y-intercept demonstrates how the dependent-y variable changes with one unit measure change in the single independent-x variable. Since we are concerned with many dimensions of a profile and the users' overall site activity, we need **multiple linear regression**, in which there are many X variable coefficients impacting Y. This equation calculates the estimated outcome of our **multiple linear regression**, where we're interested in how the hours since last login is affected by age, income, and hours volunteered.
+- `Hours since last login = (age_coeff * age) + (income_coeff * income) + (volunteer_coeff * volunteerHrs) + y-intercept`
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
