@@ -125,6 +125,27 @@ Quartile 1: The smallest values 25% of the data.
 - 0 correlation means there is no relationship between variables.
 - Positive correlation indicate that as one variable increases, the other also increases.
 - Negative correlation values signify that as one variable increases, the other decreases.
+- Spreadsheets have 3 formulas for calculating the y-intercept and slope given two variables.
+**SLOPE()** - will return the slope of a trend line or linear regression representing the linear change in one unit to another.
+**INTERCEPT()** - returns the value where the trendline will intersect the y-axis.
+**LINEST()** - calculates both the slope & the intercept of two variables using the least-squares method.
+
+### Bar Charts
+- Visualize non-numeric data.
+- **`COUNTIF()`** function can been to used to count the number of "1"s and "0"s. 
+
+## Statistical Hypothesis Testing
+
+### Central to stats - Sampling
+- **Population** : In stats, a population is defined as an **entire** distribution of similar observations or events.
+- Often its costly and time consuming to work with entire population, so its better to **sample** the population. A sample is a subset of the population's observations.
+- **Central Limit Theorem** : It finds that if we repeatedly randomly sample independently from any distribution, skewed or not, **the resulting sample will be normal**. Using an appropriate sample size along with the central limit theorem helps overcome the problem of using data from non-normal populations.
+- The more data that's gathered in a sample, the more certainty exists in the resulting statistics. The normalcy of the sample, proven in the central limit theorem let's us make statistical inferences from the sample to the population which leads us to hypothesis testing.
+- **Central limit theorem** is defined as `If a sample size from an independent random variable is *large enough* then the sampling distribution will be normal or nearly normal`. This lets us make inferences to the population.
+- However, "large enough" is vague. The size is dictated by two factors. First, exactly how precise do we need to be ? Second factor is how the population distribution behaves. The more normal the underlying population the less sample data points are needed to make accurate inferences based on the sample. If the underlying population is normal they would say a sample of 30-40 would be sufficent to make inferences about the population. 
+
+#### Sampling in Spreadsheets 
+- There are many ways to sample data. Sampling choices affect the statistics and as a result, what we learn about the data population. A popular method for sampling is to do it randomly.
 
 ### Central Limit Theorem in action
 - increasing the sample size changes both the statistics as well as the histogram
