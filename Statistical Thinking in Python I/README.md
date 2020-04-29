@@ -82,6 +82,19 @@ _ = plt.ylabel('percent of vote for obama')
 plt.show()
 ```
 
+### Covariance and PCC
+- A measure of how two quantities vary together. If x and y both tend to be above or both below their respective means together, then the covariance is positive. This means that they are positively correlated. Conversely if x is high while the y is low, the covariance is neagative and the data are negatively correlated.
+- However, if we want to have a more generally applicale measure of how two variables depend on each other, we want it to be dimensionless, that is to not have any units. So we can divide the covariance by the standard deviations of the x and y variables. This is called the Pearson correlation coefficient, usually denoted by rho.
+- It is the comparison of the variability in the data due to codependence (the covariance) to the variability inherent to each variable independently (their standard deviations). It is dimensionless and ranges from -1 to 1.
+
+
+
+
+
+
+
+
+
 
 
 
