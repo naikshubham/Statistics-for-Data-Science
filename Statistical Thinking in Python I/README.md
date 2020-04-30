@@ -87,6 +87,9 @@ plt.show()
 - However, if we want to have a more generally applicale measure of how two variables depend on each other, we want it to be dimensionless, that is to not have any units. So we can divide the covariance by the standard deviations of the x and y variables. This is called the Pearson correlation coefficient, usually denoted by rho.
 - It is the comparison of the variability in the data due to codependence (the covariance) to the variability inherent to each variable independently (their standard deviations). It is dimensionless and ranges from -1 to 1.
 
+### Probabilistic logic and statistical inference
+#### Random number generators and hacker statistics
+
 
 
 
