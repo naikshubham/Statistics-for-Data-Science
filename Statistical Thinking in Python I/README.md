@@ -89,6 +89,59 @@ plt.show()
 
 ### Probabilistic logic and statistical inference
 #### Random number generators and hacker statistics
+- The basic idea is that instead of repeating the data acquisition over and over again, we can simulate those repeated measurements using Python.
+- If we want to simulate a coin flip, we will use the function np.random.random ,which draws a number between 0 and 1 such that all numbers in this interval are equally likely to occur. This type of experiment, where the result is either True(Heads) or False(tails) is referred to as a Bernoulli trial. 
+
+#### Random number seed
+- Integer fed into random number generating algorithm. Manually seed random number generator if we need reproducibility. Specied using `np.random.seed()`
+- The same seed gives the same sequence of random numbers.So if we want to have a reproducible code, its a good idea to seed the random number generator using the np.random.seed function.
+
+#### Simulating 4 coin flips
+
+```python
+import numpy as np
+np.random.seed(42)
+random_numbers = np.random.random(size=4)
+heads = random_numbers < 0.5
+np.sum(heads)
+```
+
+- We want to know the probability of getting four heads if we were to repeat the four flips over and over again.
+
+```python
+n_all_heads = 0 # initialize number of 4-heads trails
+
+for _ in range(10000):
+    heads = np.random.random(size=4) < 0.5
+    n_heads = np.sum(heads)
+    if n_heads == 4:
+        n_all_heads += 1
+n_all_heads / 10000    # result is no of times we got all heads, divided by the total no of trails we did
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
