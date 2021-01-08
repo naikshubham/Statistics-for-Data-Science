@@ -1,8 +1,58 @@
+# Statistics in Python
 
+#### Statistics of a single variable
+- Mean is the measure of the center `mean = sum(x)/len(x)
+- For measure of spread, try subtracting the mean from every data point: the results are called deviations(centering) `dx= x - np.mean(x)`. 
+- **Variance** : If we average these (take a mean), they tend to cancel out to zero, so we square them first and then average. The result is called the variance. ` variance = np.mean(dx**dx)`
+- **Standard deviation** : But now the units are not the same as the data, so we take the square root. The result is the standard deviation. `stdev = np.sqrt(variance)`
+- **Covariance** : While the variance measure how a single variable varies, covariance measures how two variables "vary together".
+
+```python
+# covariance
+# deviations of two variables
+dx = x - np.mean(x)
+dy = y - np.mean(y)
+
+# co-vary means to vary together
+deviation_products = dx*dy
+
+# covariance as the mean
+covariance = np.mean(dx*dy)
+
+# correlation
+# divide the deviations by std-dev
+zx = dx/np.std(x)
+zy = dy/np.std(y)
+
+# mean of the normalize deviations
+correlation = np.mean(zx*zy)
+```
+
+- For each deviation product, if x & y are varying in the same direction the result is positive. If they vary in opposite direction the result is negative. The average of those products will be larger if both variables change in the same direction.
+- But as with the variance, covariance can be difficult to interpret and compare.
+
+#### Correlation
+- If we divide each deviation by the variables standard deviation, the result is the covariance of the normalized deviations or "correlation.
+- But why "normalize". The problem in comparing two variables is that the different center and spread make covariance harder to interpret, and harder to compare to other data sets.
+
+```python
+x = [1,2,3,4,5,6,7,8,9,10]
+mean = sum(x) / len(x)
+print(mean)
+
+# centering (deviation)
+dx = x - np.mean(x)
+print(dx)
+
+mean = sum(dx) / len(dx)
+print(mean)
+
+# variance
+variance = np.mean(dx*dx)
+```
 
 ```python
 
-# Statistics in Python
 
 ### Histogram
 - The default bin size in matplotlib is **10**. 
