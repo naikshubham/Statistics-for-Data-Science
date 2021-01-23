@@ -169,12 +169,26 @@ for _ in range(10000):
 n_all_heads / 10000    # result is no of times we got all heads, divided by the total no of trails we did
 ```
 
+### Density of a multivariate normal distribution
+- 
 
+### Checking normality of multivariate data
+- Classical statistical techniques that assume univariate/multivariate normality:
 
+1. Multivariate regression
+2. Discriminant analysis
+3. Model-based clustering
+4. Principal component analysis (PCA)
+5. Multivariate analysis of variance (MANOVA)
 
+#### Univariate normality tests
+- **QQ norm** is widely used graphical technique for testing univariate normality. A QQ norm plot is a scatterplot created by plotting the theorical quantiles against the sample quantiles from the data.
+- If the values lie along a straight line, the data follows a normal distribution with some mean and variance.
+- **Deviation from straight line** might indicate heavier tails, the presence of skewness, outliers or clustered data.
+- Although univariate normality does not imply multivariate normality, if any single variable fails to follow normality we cannot have joint multivariate normality.
 
-
-
+#### Multivariate normality tests
+- Mardia, Henzer-Zirkler, Royston & Graphical approaches chi square Q-Q,perspective, contour plots.
 
 
 
